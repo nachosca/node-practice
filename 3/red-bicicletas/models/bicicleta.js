@@ -5,6 +5,14 @@ var Bicicleta = function(id, color, modelo, ubicacion) {
     this.ubicacion = ubicacion;
 }
 
+var Bicicleta = function(id, color, modelo, lat, lng) {
+    this.id = id;
+    this.color = color;
+    this.modelo = modelo;
+    this.lat = lat;
+    this.lng = lng;
+}
+
 Bicicleta.prototype.toString = function (){
     return 'id: ' + this.id + " | color: " + this.color;
 }
