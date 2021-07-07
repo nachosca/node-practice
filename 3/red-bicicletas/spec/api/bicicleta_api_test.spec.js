@@ -1,3 +1,5 @@
+/*
+
 var Bicicleta = require('../../models/bicicleta');
 var axios = require('axios');
 var server = require('../../bin/www');
@@ -33,3 +35,5 @@ describe('Bicicleta API', () => {
         });
     });
 });
+
+*/
