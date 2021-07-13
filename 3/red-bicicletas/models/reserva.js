@@ -10,7 +10,7 @@ var reservaSchema = new Schema({
 });
 
 usuarioSchema.diasDeReserva = function () {
-    return moment(this.hasta).diff(moment(this.desde), 'days') 
+    return moment(this.hasta).diff(moment(this.desde), 'days') + 1;
 };
 
 module.exports = mongoose.model('Usuario', usuarioSchema);
