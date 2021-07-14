@@ -39,6 +39,8 @@ var usuarioSchema = new Schema({
     }
 })
 
+usuarioSchema.plugin(uniqueValidator, { message: 'El {PATH} ya existe con otro usuario.'});
+
 
 usuarioSchema.pre('save', function(next){
     if (this.isModified('password')){

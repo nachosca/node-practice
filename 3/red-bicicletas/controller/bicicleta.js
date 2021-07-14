@@ -9,14 +9,19 @@ exports.bicicleta_create_get = function(req, res){
 }
 
 exports.bicicleta_create_post = function(req, res){
-    var bici = new Bicicleta(req.body.id, req.body.color, req.body.modelo);
-    bici.ubicacion = [req.body.lat, req.body.lng];
+    ubicacion = [req.body.lat, req.body.lng];
+    var bici = Bicicleta.createInstance(req.body.id, req.body.color, req.body.modelo, ubicacion);
+ 
     Bicicleta.add(bici);
+
+    console.log('3' + bici);
 
     res.redirect('/bicicletas');
 }
 
 exports.bicicleta_delete_post = function(req, res){
+    console.log(req);
+    console.log(req.body.id);
     Bicicleta.removeById(req.body.id);
 
     res.redirect('/bicicletas');
